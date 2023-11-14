@@ -45,8 +45,11 @@ trs readTransaction()
     float amount;
     char type[10];
     printf("Enter transaction data:\n");
-    printf("Enter amount: ");
-    scanf("%f", &newTransaction.amount);
+    do
+    {
+        printf("Enter amount: ");
+        scanf("%f", &newTransaction.amount);
+    }while(newTransaction.amount <= 0);
     do
     {
         printf("Enter type(income or expense): ");
