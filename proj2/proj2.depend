@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1704681075 source:c:\users\alex\documents\info\prog in c\proj2\account.c
+	<stdlib.h>
+	<stdio.h>
+	"account.h"
+
+1704681039 c:\users\alex\documents\info\prog in c\proj2\account.h
+	"users.h"
+
+1704681039 c:\users\alex\documents\info\prog in c\proj2\users.h
+
+1704680981 source:c:\users\alex\documents\info\prog in c\proj2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<assert.h>
+	"users.h"
+	"account.h"
+
+1704680562 source:c:\users\alex\documents\info\prog in c\proj2\users.c
+	<stdlib.h>
+	<stdio.h>
+	"users.h"
+
