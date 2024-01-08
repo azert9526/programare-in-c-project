@@ -1,15 +1,16 @@
 # depslib dependency file v1.0
-1704681075 source:c:\users\alex\documents\info\prog in c\proj2\account.c
+1704715189 source:c:\users\alex\documents\info\prog in c\proj2\account.c
 	<stdlib.h>
 	<stdio.h>
+	<string.h>
 	"account.h"
 
-1704681039 c:\users\alex\documents\info\prog in c\proj2\account.h
+1704715186 c:\users\alex\documents\info\prog in c\proj2\account.h
 	"users.h"
 
-1704681039 c:\users\alex\documents\info\prog in c\proj2\users.h
+1704714647 c:\users\alex\documents\info\prog in c\proj2\users.h
 
-1704680981 source:c:\users\alex\documents\info\prog in c\proj2\main.c
+1704715314 source:c:\users\alex\documents\info\prog in c\proj2\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -17,8 +18,34 @@
 	"users.h"
 	"account.h"
 
-1704680562 source:c:\users\alex\documents\info\prog in c\proj2\users.c
+1704715574 source:c:\users\alex\documents\info\prog in c\proj2\users.c
 	<stdlib.h>
 	<stdio.h>
+	<string.h>
+	"users.h"
+
+1704711927 source:c:\users\alex\documents\info\prog in c\proj2fake\account.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"account.h"
+
+1704711068 c:\users\alex\documents\info\prog in c\proj2fake\account.h
+	"users.h"
+
+1704712288 c:\users\alex\documents\info\prog in c\proj2fake\users.h
+
+1704711540 source:c:\users\alex\documents\info\prog in c\proj2fake\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<assert.h>
+	"users.h"
+	"account.h"
+
+1704712355 source:c:\users\alex\documents\info\prog in c\proj2fake\users.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
 	"users.h"
 

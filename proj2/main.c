@@ -5,15 +5,13 @@
 #include "users.h"
 #include "account.h"
 
-const user nullUser = {"", "", NULL, 0, 0};
-const account nullAccount = {"", NULL, 0, 0};
 void accountloop(account acc)
 {
     //pentru a face operatii intr-un cont
     loadAccountData(&acc);
     for(;;) //bucla infinita, se opreste cand utilizatorul alege optiunea exit/ logout
     {
-        printf("Options:\n1. Record transaction\n2. Calculate balance\n3. Transaction registers\n4.Expense reports\n5. Exit account\n6. Exit\n");
+        printf("Options:\n1. Record transaction\n2. Calculate balance\n3. Transaction registers\n4. Expenses report\n5. Exit account\n6. Exit\n");
         char option;
         scanf(" %c", &option);
         switch (option) //citirea si procesarea optiunii
@@ -24,7 +22,7 @@ void accountloop(account acc)
                 break;
 
             case '2':
-                printf("The account balance is: %f", calculateBalance(acc));
+                printf("The account balance is: %f\n", calculateBalance(acc));
                 break;
 
             case '3':
@@ -32,6 +30,7 @@ void accountloop(account acc)
                 break;
 
             case '4':
+                printf("Expenses total: %f\n", expensesReport(acc));
                 break;
 
             case '5':
@@ -72,25 +71,30 @@ void userloop(user usr)
 
             case '2':
                 do{
+                    printf("Choose the type of account you want to use: ");
                     scanf("%49s", type);
+                    int found = 0;
                     for(int i = 0; i < usr.used; i++)
                     {
                         if(strcmp(type, usr.accounts[i].type) == 0)
                         {
-                            account acc = nullAccount;
+                            account acc = getNullAccount();
                             strcpy(acc.type, type);
                             accountloop(acc);
+                            found = 1;
                             break;
                         }
                     }
+                    if(found == 1) break;
                     printf("This type of account does not exist!\n");
                 }while(1);
 
                 break;
 
             case '3':
+                printf("Account type: ");
                 scanf("%49s", type);
-                account acc = nullAccount;
+                account acc = getNullAccount();
                 strcpy(acc.type, type);
                 insertAccount(&usr, acc); //adaugam contul
                 saveUserAccounts(usr);
@@ -127,7 +131,8 @@ void uiloop()
         {
             case '1':
                 usr = logInUser(users, readUserNamePass());
-                userloop(usr);
+                if(strcmp(usr.name, "") == 0) printf("User does not exist!\n");
+                else userloop(usr);
                 break;
 
             case '2':

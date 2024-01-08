@@ -5,7 +5,7 @@
 
 typedef struct {
     float amount; // + = income, - = expense
-    char type[50]; //deposit, withdrawal, transfer, payment
+    char type[20]; //deposit, withdrawal, transfer, payment
     char date[15], description[200];
 } trs;
 
@@ -22,13 +22,11 @@ typedef struct {
 } user;
 
 typedef struct {
-  user *array;
-  size_t used, size;
+    user *array;
+    size_t used, size;
 } userArray;
 
 void insertUser(userArray *a, user element);
-
-void deleteUser(); //todo
 
 user readUserNamePass();
 
@@ -39,5 +37,9 @@ user logInUser(userArray users, user user);
 void saveUsersLogIn(userArray *users);
 
 void loadUsersLogIn(userArray *users);
+
+user getNullUser();
+
+account getNullAccount();
 
 #endif

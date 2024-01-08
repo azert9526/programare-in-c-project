@@ -5,7 +5,6 @@
 
 #include "users.h"
 
-
 void insertAccount(user *a, account element);
 
 void recordTransaction(account *a, trs transaction);
@@ -21,6 +20,7 @@ void printTransaction(trs transaction);
 void displayTransactions(account account);
 
 float calculateBalance(account account);
+float expensesReport(account account);
 
 void saveAccountData(account account);
 
@@ -29,5 +29,6 @@ void loadAccountData(account *account);
 void saveUserAccounts(user user);
 
 void loadUserAccounts(user *user);
+
 
 #endif
